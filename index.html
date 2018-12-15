@@ -14,8 +14,8 @@
     </style>
   </head>
   <body>
-    hello2
-    <button>Send</button>
+    helloNow
+    <button id="send">Send</button>
     <ul id="messages"></ul>
     <form action = "">
       <input id="m" autocomplete="off" />
@@ -25,7 +25,7 @@
     <script>
         $(function () {
             var socket = io();
-            $('form').submit(function(){
+            $('#send').click(function(){
             socket.emit('chat message', $('#m').val());
             $('#m').val('');
             return false;
